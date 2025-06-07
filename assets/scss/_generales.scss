@@ -8,8 +8,6 @@ h1{
 h2{
     font-size: $tamano-h2;
     font-weight: $weight-h2;
-    font-family: $fuente-titulo;
-    padding-top: 20px;
 }
 
 h3{
@@ -79,8 +77,7 @@ nav{
 
 }
 .logo{
-    width: 220px;
-    height: auto;
+    width: 150px;
     padding-right: 40px;
 }
 .nav-link{
@@ -135,84 +132,39 @@ ol{
     background-size: cover;
 }
 
-.album.py-5{
-    img{
-        height: 400px;
-    }
-}
+
 .sobremi {
     background-color: $color-sobremi;
-    width: 95%; /* Cambiado a 100% para que ocupe todo el ancho disponible */
+    width: 100%; /* Cambiado a 100% para que ocupe todo el ancho disponible */
+    max-width: 1300px; /* Mantiene el límite máximo */
     margin: 0 auto;
-    padding: 40px;
     color: $color-texto-sobremi;
-    
-}
-.imgseñor {
-        width: 100%;
-       
-        object-fit: contain;
-        margin-bottom: 30px;
+
+    .imgseñor {
+        width: 88%;
+
     }
 
-.sobremititulo{
-    margin-bottom: 20px;
-    padding: 10px 0px 20px 10px;
-    color: $color-texto-sobremi;
-    font-weight: $weight-h1-delgada;
-    display: flex;
-    justify-content:space-between;
 }
 
-.sobremiparrafo{
-    width: 90%;
-   
-    p{
-        color: $color-texto-sobremi;
-    }
-}
-
-
-.galeria-index{
-    
-    img{
-        object-fit: cover;
-        height: 200px;
-    }
-}
-
-.infocuadro{
-    padding: 0px 30px 0px 30px;
-    margin: 10px 0px 0px 0px;
-    a{
-        text-decoration: none;
-        margin: 0;
-    }
-
-    p{
-        font-size: $tamano-p-grande;
-        font-weight: $weight-h1;
-    }
-}
-
-.container.sobremi{
-    display: flex;
-}
 
 .contacto {
     background-color: $color-principal;
     width: 100%; /* Cambiado a 100% para que ocupe todo el ancho disponible */
     margin: 30px auto;
-    height: 650px;
+    height: 600px;
     color: $color-texto-sobremi;
 
-    h2{
-        margin-top: 20px;
+    .contactA{
+        padding: 20px auto;
     }
     .lineacontac{
         margin: 63px 0px 0px 0px;
     }
-    
+    .imgmapa {
+        width: 58%;
+    }
+
     .formulario2 {
         @include formularios
     }
@@ -226,20 +178,7 @@ ol{
     .formulario3 textarea {
         @include forml-text2
     }
-    button{
-        margin-top: 20px;
-    }
-    p{
-        color: $color-de-fondo;
-    }
-    display: flex;
-    iframe{
-        width: 80%;
-        height: 60%;
-    }
-    .col-4{
-        padding-top: 27px;
-    }
+    
 }
 
 
@@ -274,41 +213,8 @@ ol{
       font-size: 1.25rem;
       line-height: 1.4;
     }
-}
-@media (max-width:596px) {
-   
-    .contacto{
-        .row{
-        display: block;
-        iframe{
-            width: 400px;
-            height: 300px;
-        }
-    }
+  }
 
-     height: 1100px;}
-     .sobremititulo{
-       
-        justify-content:center;
-    }
-}
-@media (max-width:796px) {
-     .container.sobremi{
-
-    .row{
-        display: block;
-    }
-    img{
-        width: 400px;
-        height: 350px;
-        object-fit: cover;
-    }
-    .col-7{
-        width: 100%;
-    }
-}
-    
-}
 /* Fin Carousel base class */ 
 
 
@@ -353,18 +259,48 @@ ol{
         position: relative;
         top: -11rem;
         left: 35%;
-        margin-right:  10px;
+        
     }
    .dos{
         position: relative;
         top: -11rem;
         left: 40%;
-        margin-left: 10px;
     }
-    .col{
-        padding: 5px;
-    }
+    
 }
+/* Hover funcional */
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d4633ae3; /* Color de fondo (azul con opacidad) */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Muestra el overlay al hacer hover */
+}
+
+/* Fin Hover funcional */
 
 .oculto{
     height: 100%;
@@ -406,7 +342,7 @@ ol{
     position: relative;
     z-index: 0;
     transition: all 400ms ease-out;
-    margin: 5px;
+    
 }
 .pintura{
     z-index: -1;
@@ -444,7 +380,7 @@ button:hover{
 .botongrande{
     border-radius: 20px;
     margin: 30px auto;
-    padding: 15px ;
+    padding: 25px;
     background-color: $color-de-fondo;
     border-color: $color-secundario;
     font-family: $fuente-titulo;
@@ -460,29 +396,22 @@ button:hover{
 .modern{
     margin: 40px auto;
 }
-@media screen and (max-width: 1224px) {
+@media screen and (max-width: 1024px) {
     .row.modernas3{
     .oculto:hover{
-        padding-top: 15px;
-       h3{
-        font-size: 20px !important;
-       }
-       button{
-        font-size: 12px;
-        padding: 5px 8px;
-        margin-top: 10px;
-    }}}  
+        padding-top: 0px;
+    }     }
 }
 
 @media screen and (max-width:992px) {
     .otraseccion{
         .uno{
-            left: 4.5rem;
+            left: 2rem;
             padding: 10px;
             
         }
         .dos{
-            left: 5rem;
+            left: 3rem;
             padding: 10px;
         }
         
@@ -491,43 +420,21 @@ button:hover{
     .row.modernas3{
        .oculto:hover{
                 h3{
-                    font-size: 18px !important;
+                    font-size: 18px;
                 }
-                padding-top: 8px;
-                p{
-                    font-size: 11px;
-                }
+                padding-top: 30px;
 
             }     
-        }button{
-            font-size: 12px;
-            padding: 5px 8px;
-            margin-top: 10px;
-        }
-        
-}
-@media screen and (max-width:767px) {
-    .row.modernas3{
-        
-        img{
-            height: 175px;
-        }
-        h3{
-            font-size: 15px !important;
-            padding: 5px;
-        }
-        p{
-            font-size: 11px;
         }
         button{
-            margin-top: 5px;
+            font-size: 12px;
+            padding: 8px 5px;
         }
-    }
 }
 @media screen and (max-width:596px) {
     .otraseccion{
         .uno{
-            left: 2.5rem;
+            left: 0.5rem;
             padding: 10px 0px;
             
         }
@@ -633,13 +540,6 @@ form{
         margin-top: 40px;
     }
 }
-.terminoscc{
-    
-      color: $color-principal;
-    text-decoration: underline;  
-
-    
-}
 //FIN CARRITO
 
 
@@ -650,18 +550,10 @@ form{
 }
 
 .contendorimgpng {
-    
+    position: absolute;
     .imgterm{
-        width: 38%;
-        position: absolute;
-        z-index: -1;
-        object-fit: contain;
-        left: -36px;
-        rotate: 45px;
+        width: 80%;
     }
-}
-.term{
-    background-color: adjust-hue($color: $color-de-fondo, $degrees: 1);
 }
 @media screen and (max-width:796px) {
     .contendorimgpng{
@@ -745,13 +637,11 @@ form{
     appearance: none;
     background-color: var(--bs-body-bg);
     background-clip: padding-box;
-    border: var(--bs-border-width) solid $color-detalle;
+    border: solid #D05629;
     border-radius: var(--bs-border-radius);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.pequeño{
-    width: 20%;
-}
+
 .row.pedido{
     margin: 50px 0px;
     h1{
@@ -788,7 +678,7 @@ textarea{
 footer{
     margin: 90px 0px 20px 0px;
     padding-top: 60px;
-    border-top: 1px solid $color-fuente;
+   border-top: 1px solid $color-fuente;
 }
 .logofooter{
     width: 280px;
@@ -809,7 +699,7 @@ footer{
 }
 //FIN FOOTER
 
-// PRODUCTO INSUMO ACRILICO TUBO
+// PRODUCTO INSUMO ACRIICO TUBO
 .p-insumo{
     width: 100%;
 }
@@ -820,7 +710,7 @@ footer{
     border-radius: 20px;
     border-width: 1px;
     img{
-        width: 40%;
+        width: 60%;
         
    }
     h5{
@@ -830,20 +720,6 @@ footer{
     }
 
 }
-.row.colores{
-
-     margin: 10px;   
-     margin-bottom: 20px;
-     img{
-        width: 35%;
-     }
-     img:hover{
-        cursor: pointer;
-     }
-    }
-    
-
-
 @media screen and (max-width:596px){
     .col-3.insumos{
         margin: 40px auto;
@@ -880,22 +756,5 @@ footer{
         .carritoicon{
             width: 40%;
         }
-    }
-}
-
-
-.imagen-con-texto {
-    display: none;
-}
-
-@media screen and (max-width:796px) {
-    .imagenocl{
-        display: none;
-    }
-    .imagen-con-texto{
-        display: flex;
-    }
-    .buton1{
-        display: none;
     }
 }

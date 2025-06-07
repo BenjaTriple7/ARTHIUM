@@ -195,7 +195,7 @@
 
   &.active,
   &:active {
-    color: #D4633A;
+    color: var(--#{$prefix}dropdown-link-active-color);
     text-decoration: none;
     @include gradient-bg(var(--#{$prefix}dropdown-link-active-bg));
   }
