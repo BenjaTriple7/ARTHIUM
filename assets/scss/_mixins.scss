@@ -1,0 +1,58 @@
+@mixin formularios {
+    display: flex;
+    width: 100%; /* Ajusta el ancho de las cajas */
+    margin: 25px 0px 0px 0px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0px;
+    border: $color-principal;
+}
+
+@mixin forml-text {
+    width: 100%;
+    height: 46px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    font-family: $fuente-parrafo;
+    border-radius: 5px;
+}
+
+@mixin forml-text2 {
+    width: 100%;
+    height: 166px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    font-family: $fuente-parrafo;
+    border-radius: 5px;
+    
+}
+
+
+
+
+@mixin solform1 {
+    display: flex;
+    width: 100%; /* Ajusta el ancho de las cajas */
+    margin: 25px 0px 0px 0px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0px;
+    border: solid #D05629;
+}
+
+@mixin soliprest-text2 {
+    width: 100%;
+    height: 166px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    font-family: $fuente-parrafo;
+    border-radius: 5px;
+    
+}
+
